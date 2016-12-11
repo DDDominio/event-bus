@@ -2,6 +2,7 @@
 
 namespace EventBus;
 
+use Common\Event;
 use Doctrine\Common\Annotations\AnnotationReader;
 use EventBus\Annotation\EventHandler;
 

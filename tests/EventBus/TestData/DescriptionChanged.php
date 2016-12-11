@@ -2,7 +2,7 @@
 
 namespace Tests\EventBus\TestData;
 
-use EventBus\Event;
+use Common\Event;
 
 class DescriptionChanged implements Event
 {

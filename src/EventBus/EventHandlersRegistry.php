@@ -2,6 +2,8 @@
 
 namespace EventBus;
 
+use Common\Event;
+
 class EventHandlersRegistry
 {
     /**
