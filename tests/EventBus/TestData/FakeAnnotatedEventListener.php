@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\EventBus\TestData;
+namespace DDDominio\Tests\EventBus\TestData;
 
-use EventBus\Annotation\EventHandler;
-use EventBus\EventListener;
+use DDDominio\EventBus\Annotation\EventHandler;
+use DDDominio\EventBus\EventListener;
 
 class FakeAnnotatedEventListener implements EventListener
 {

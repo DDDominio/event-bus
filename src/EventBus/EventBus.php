@@ -1,10 +1,10 @@
 <?php
 
-namespace EventBus;
+namespace DDDominio\EventBus;
 
-use Common\Event;
+use DDDominio\Common\EventInterface;
+use DDDominio\EventBus\Annotation\EventHandler;
 use Doctrine\Common\Annotations\AnnotationReader;
-use EventBus\Annotation\EventHandler;
 
 class EventBus
 {
@@ -71,14 +71,14 @@ class EventBus
     }
 
     /**
-     * @param Event $event
+     * @param EventInterface $event
      */
-    public function dispatch(Event $event)
+    public function dispatch(EventInterface $event)
     {
         foreach ($this->eventListeners as $eventListener) {
             $eventHandlerNames = $this->eventHandlersRegistry->getHandlersFor($eventListener, $event);
             foreach ($eventHandlerNames as $eventHandlerName) {
-                $eventListener->{$eventHandlerName}($event);
+                $eventListener->{$eventHandlerName}($event->data());
             }
         }
     }

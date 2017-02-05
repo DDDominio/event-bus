@@ -1,8 +1,8 @@
 <?php
 
-namespace EventBus;
+namespace DDDominio\EventBus;
 
-use Common\Event;
+use DDDominio\Common\EventInterface;
 
 class EventHandlersRegistry
 {
@@ -23,13 +23,13 @@ class EventHandlersRegistry
 
     /**
      * @param EventListener $eventListener
-     * @param Event $event
+     * @param EventInterface $event
      * @return string[]
      */
-    public function getHandlersFor(EventListener $eventListener, $event)
+    public function getHandlersFor(EventListener $eventListener, EventInterface $event)
     {
         $eventListenerName = get_class($eventListener);
-        $eventName = get_class($event);
+        $eventName = get_class($event->data());
         return isset($this->eventHandlersRegistry[$eventListenerName][$eventName]) ?
             $this->eventHandlersRegistry[$eventListenerName][$eventName] : [];
     }

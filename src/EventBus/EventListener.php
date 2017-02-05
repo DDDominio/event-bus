@@ -1,6 +1,6 @@
 <?php
 
-namespace EventBus;
+namespace DDDominio\EventBus;
 
 interface EventListener
 {

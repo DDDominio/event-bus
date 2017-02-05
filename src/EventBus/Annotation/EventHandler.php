@@ -1,6 +1,6 @@
 <?php
 
-namespace EventBus\Annotation;
+namespace DDDominio\EventBus\Annotation;
 
 use Doctrine\Common\Annotations\Annotation;
 

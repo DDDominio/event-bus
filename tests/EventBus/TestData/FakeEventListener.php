@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\EventBus\TestData;
+namespace DDDominio\Tests\EventBus\TestData;
 
-use EventBus\EventListener;
+use DDDominio\EventBus\EventListener;
 
 class FakeEventListener implements EventListener
 {

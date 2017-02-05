@@ -1,10 +1,8 @@
 <?php
 
-namespace Tests\EventBus\TestData;
+namespace DDDominio\Tests\EventBus\TestData;
 
-use Common\Event;
-
-class NameChanged implements Event
+class NameChanged
 {
     /**
      * @var string
@@ -12,18 +10,11 @@ class NameChanged implements Event
     private $name;
 
     /**
-     * @var \DateTimeImmutable
-     */
-    private $occurredOn;
-
-    /**
      * @param string $name
-     * @param \DateTimeImmutable $occurredOn
      */
-    public function __construct($name, \DateTimeImmutable $occurredOn)
+    public function __construct($name)
     {
         $this->name = $name;
-        $this->occurredOn = $occurredOn;
     }
 
     /**
@@ -32,13 +23,5 @@ class NameChanged implements Event
     public function name()
     {
         return $this->name;
-    }
-
-    /**
-     * @return \DateTimeImmutable
-     */
-    public function occurredOn()
-    {
-        return $this->occurredOn;
     }
 }
